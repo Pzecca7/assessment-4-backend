@@ -1,0 +1,155 @@
+header {
+    height: 100px;
+    background-color: #F58426;
+    color: #006BB6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#complimentButton {
+    background-color: #006BB6;
+    margin-right: 50px;
+    padding: 10px 10px;
+	color: white;
+	border-radius: 10px;
+	border-color: white
+}
+
+#fortune-btn {
+    background-color: #006BB6;
+    margin-left: 50px;
+    padding: 10px 10px;
+	color: white;
+	border-radius: 10px;
+	border-color: white
+}
+
+h1 {
+    font-size: 35px;
+    font-family: monospace;
+    font-weight: 700;
+
+}
+
+.pizza-clip-art {
+    height: 50px
+}
+
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#nyc-skyline{
+    height: 560px;
+}
+
+form{
+    height: 75px;
+    width: 1677px;
+    background-color: #006BB6;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#add-btn {
+    background-color: #F58426;
+	padding: 10px 10px;
+	color: white;
+	border-radius: 10px;
+	border-color: white
+}
+
+button:hover {
+    transform: scale(1.1,1.1);
+	cursor: pointer;
+}
+
+#pizzerias-container {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pizzeria-tab {
+    
+    height: 200px;
+    width: 1300px;
+    background-color: #ddd;
+    border: 2px solid #006BB6;
+    border-radius: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.pizza-img {
+    height: 200px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.name{
+    color: #006BB6;
+    line-height: 1.4;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.address{
+    color: #006BB6;
+    line-height: 1.4;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+
+.speciality{
+    color: #006BB6;
+    line-height: 1.4;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.pizza-rating{
+    color: #006BB6;
+    line-height: 1.4;
+    font-weight: 600;
+    font-size: 50px;
+}
+
+
+
+
+
+.rating-btn{
+    background-color: #F58426;
+    border-color: white;
+    color: white
+}
+
+
+.btn-container {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-right: 50px;
+}
+
+#remove-btn {
+    background-color: #006BB6;
+    margin-right: 10px;
+    padding: 10px 10px;
+	color: white;
+	border-radius: 10px;
+	border-color: white
+}
