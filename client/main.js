@@ -31,36 +31,37 @@ const baseURL = `http://localhost:4000/pizzerias`
 const getAllPizzerias = () => {
     axios.get(baseURL)
     .then(response => {
+        console.log(response.data)
         displayPizzerias(response.data)
     })
     .catch(err => console.log(err))
 }
 
-const addPizzeria = (body) => {
-    axios.post(baseURL, body)
+const addPizzeria = (bodyObj) => {
+    axios.post(baseURL, bodyObj)
     .then(response => {
         displayPizzerias(response.data)
     })
     .catch(err => console.log(err))
 }
 
-const removePizzeria = (id) => {
-    axios.delete(`${baseURL}/${id}` )
+const removePizzeria = (index) => {
+    axios.delete(`${baseURL}/${index}` )
     .then(response => {
         displayPizzerias(response.data)
     })
     .catch(err => console.log(err))
 }
 
-const updateRating = (id, type) => {
-    axios.put(`${baseURL}/${id}`, {type})
+const updateRating = (index, type) => {
+    axios.put(`${baseURL}/${index}`, {type})
     .then(response => {
         displayPizzerias(response.data)
     })
     .catch(err => console.log(err))
 }
 
-function submitHandler(event) {
+function submitNewPizzeria(event) {
     event.preventDefault()
 
     let name = document.querySelector(`#input-name`)
@@ -76,6 +77,7 @@ function submitHandler(event) {
         rating: +(rating.value),
         imgURL: imgURL.value
     }
+
 
     addPizzeria(bodyObj)
 
@@ -97,11 +99,11 @@ const createPizzeriaTab = (pizzeria) => {
         <p class="address">${pizzeria.address}</p>
         <p class="speciality">${pizzeria.speciality}</p>
         <div class="btns-container">
-            <button class="rating-btn" onclick="updateRating(${pizzeria.id}, 'minus')">-</button>
+            <button class="rating-btn" onclick="updateRating(${pizzeria.index}, 'minus')">-</button>
             <p class="pizza-rating">${pizzeria.rating}</p>
-            <button class="rating-btn" onclick="updateRating(${pizzeria.id}, 'plus')">+</button>
+            <button class="rating-btn" onclick="updateRating(${pizzeria.index}, 'plus')">+</button>
         </div>
-        <button onclick="removePizzeria(${pizzeria.id})" id="remove-btn">Remove</button>
+        <button onclick="removePizzeria(${pizzeria.index})" id="remove-btn">Remove</button>
         `
 
 
@@ -115,7 +117,7 @@ const displayPizzerias = pizzerias => {
     }
 }
 
-form.addEventListener('submit', submitHandler)
+form.addEventListener('submit', submitNewPizzeria)
 
 
 getAllPizzerias()

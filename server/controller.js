@@ -1,5 +1,5 @@
 
-const pizzerias =[
+const pizzerias = [
     {
         name: `Name: <br> John's of Bleecker St.`,
         address: `Address: <br> 278 Bleecker St, New York, NY 10014`,
@@ -65,6 +65,7 @@ module.exports = {
         res.status(200).send(pizzerias)
     },
     removePizzeria: (req,res) => {
+        console.log(req.params)
         let { index } = req.params
         pizzerias.splice(+index, 1)
         res.status(200).send(pizzerias)
@@ -72,7 +73,8 @@ module.exports = {
     updateRating: (req,res) => {
         let { index } = req.params
         let { type } = req.body
-
+        console.log(req.body)
+        console.log(req.params)
         if(type === 'minus' && pizzerias[index].rating > 0){
             pizzerias[index].rating -= .1
         } else if(type === 'plus' && pizzerias[index].rating < 10){
@@ -83,5 +85,4 @@ module.exports = {
         }
 
     }
-
 }

@@ -70,11 +70,13 @@ button:hover {
 }
 
 #pizzerias-container {
+    margin-top: 100px;
     height: 2000px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    gap: 100px;
 }
 
 .pizzeria-tab {
