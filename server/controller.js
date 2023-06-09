@@ -67,7 +67,7 @@ module.exports = {
     removePizzeria: (req,res) => {
         let { index } = req.params
         pizzerias.splice(+index, 1)
-        res.stauts(200).send(pizzerias)
+        res.status(200).send(pizzerias)
      },
     updateRating: (req,res) => {
         let { index } = req.params
