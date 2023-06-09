@@ -21,12 +21,12 @@ const getFortune = () => {
 
 fortuneBtn.addEventListener('click', getFortune)
 
-
+const pizzeriasContainer = document.querySelector('#pizzeria-container')
+const form = document.querySelector('form')
 
 const baseURL = `http://localhost:4000/pizzerias`
 
-const pizzeriasContainer = document.querySelector('#pizzeria-container')
-const form = document.querySelector('form')
+
 
 const getAllPizzerias = () => {
     axios.get(baseURL)
@@ -88,28 +88,28 @@ function submitHandler(event) {
 }
 
 
-
 const createPizzeriaTab = (pizzeria) => {
     const pizzeriaTab = document.createElement(`div`)
     pizzeriaTab.classList.add(`pizzeria-tab`)
 
-    pizzeriaTab.innerHTML = `
-        <img alt='pizza image' src=${pizzeria.imgURL} class="pizza-img"/>
+    pizzeriaTab.innerHTML = `<img alt='pizza image' src=${pizzeria.imgURL} class="pizza-img"/>
         <p class="name">${pizzeria.name}</p>
         <p class="address">${pizzeria.address}</p>
+        <p class="speciality">${pizzeria.speciality}</p>
         <div class="btns-container">
-            <button onclick="updatePizzeria(${pizzeria.index}, 'minus')">-</button>
+            <button onclick="updateRating(${pizzeria.id}, 'minus')">-</button>
             <p class="pizza-rating">$${pizzeria.rating}</p>
-            <button onclick="updatePizzeria(${pizzeria.index}, 'plus')">+</button>
+            <button onclick="updateRating(${pizzeria.id}, 'plus')">+</button>
         </div>
-        <button onclick="removePizzeria(${pizzeria.index})">Remove</button>
-    `
+        <button onclick="removePizzeria(${pizzeria.id})">Remove</button>
+        `
 
 
     pizzeriasContainer.appendChild(pizzeriaTab)
 }
 
 const displayPizzerias = pizzerias => {
+    pizzeriasContainer.innerHTML= ``
     for (let i = 0; i < pizzerias.length; i++) {
         createPizzeriaTab(pizzerias[i])
     }
