@@ -12,7 +12,7 @@ const pizzerias =[
         address: `27 Prince St, New York, NY 10012`,
         speciality: `square with pepperoni`,
         rating: `9.2`,
-        imgURL: `https://i.redd.it/270q1yy00m9z.jp`
+        imgURL: `https://roadfood.com/wp-content/uploads/2017/08/20161231_145159-1024x685.jpg`
 
     },
     {

@@ -21,7 +21,7 @@ const getFortune = () => {
 
 fortuneBtn.addEventListener('click', getFortune)
 
-const pizzeriasContainer = document.querySelector('#pizzeria-container')
+const pizzeriasContainer = document.querySelector('#pizzerias-container')
 const form = document.querySelector('form')
 
 const baseURL = `http://localhost:4000/pizzerias`
@@ -74,7 +74,7 @@ function submitHandler(event) {
         address: address.value,
         speciality: speciality.value,
         rating: +(rating.value),
-        imgURL: imgURL.value
+        imgURL: imgURL.value,
     }
 
     addPizzeria(bodyObj)
@@ -98,7 +98,7 @@ const createPizzeriaTab = (pizzeria) => {
         <p class="speciality">${pizzeria.speciality}</p>
         <div class="btns-container">
             <button onclick="updateRating(${pizzeria.id}, 'minus')">-</button>
-            <p class="pizza-rating">$${pizzeria.rating}</p>
+            <p class="pizza-rating">${pizzeria.rating}</p>
             <button onclick="updateRating(${pizzeria.id}, 'plus')">+</button>
         </div>
         <button onclick="removePizzeria(${pizzeria.id})">Remove</button>
