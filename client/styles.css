@@ -79,7 +79,7 @@ button:hover {
 
 .pizzeria-tab {
     height: 200px;
-    width: 1300px;
+    width: 1500px;
     background-color: #ddd;
     border: 2px solid #006BB6;
     border-radius: 17px;
@@ -135,7 +135,7 @@ button:hover {
 }
 
 
-.btn-container {
+.btns-container {
     height: 200px;
     display: flex;
     flex-direction: column;

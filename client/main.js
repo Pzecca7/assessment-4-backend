@@ -67,14 +67,14 @@ function submitHandler(event) {
     let address = document.querySelector(`#input-address`)
     let speciality = document.querySelector(`#input-speciality`)
     let rating = document.querySelector(`#input-rating`)
-    let imgURL = document.querySelector(`#input-image`)
+    let imgURL = document.querySelector(`#input-img`)
 
     let bodyObj = {
         name: name.value,
         address: address.value,
         speciality: speciality.value,
         rating: +(rating.value),
-        imgURL: imgURL.value,
+        imgURL: imgURL.value
     }
 
     addPizzeria(bodyObj)
@@ -97,11 +97,11 @@ const createPizzeriaTab = (pizzeria) => {
         <p class="address">${pizzeria.address}</p>
         <p class="speciality">${pizzeria.speciality}</p>
         <div class="btns-container">
-            <button onclick="updateRating(${pizzeria.id}, 'minus')">-</button>
+            <button class="rating-btn" onclick="updateRating(${pizzeria.id}, 'minus')">-</button>
             <p class="pizza-rating">${pizzeria.rating}</p>
-            <button onclick="updateRating(${pizzeria.id}, 'plus')">+</button>
+            <button class="rating-btn" onclick="updateRating(${pizzeria.id}, 'plus')">+</button>
         </div>
-        <button onclick="removePizzeria(${pizzeria.id})">Remove</button>
+        <button onclick="removePizzeria(${pizzeria.id})" id="remove-btn">Remove</button>
         `
 
 

@@ -1,38 +1,38 @@
 
 const pizzerias =[
     {
-        name: `John's of Bleecker St.`,
-        address: `278 Bleecker St, New York, NY 10014`,
-        speciality: `coal fired pie`,
+        name: `Name: <br> John's of Bleecker St.`,
+        address: `Address: <br> 278 Bleecker St, New York, NY 10014`,
+        speciality: `Speciality: <br> coal fired pie`,
         rating: `9.6`,
         imgURL: `https://1.bp.blogspot.com/-kitWSCFQ5Xo/YNxhrd5KmaI/AAAAAAABZiQ/6f3YMZDaRikVNMenyX5zUH_EG_NPsviZACNcBGAsYHQ/s2048/20210625_161948.jpg`
     },
     {
-        name: `Prince Street Pizza`,
-        address: `27 Prince St, New York, NY 10012`,
-        speciality: `square with pepperoni`,
+        name: `Name: <br> Prince Street Pizza`,
+        address: `Address: <br> 27 Prince St, New York, NY 10012`,
+        speciality: `Speciality: <br> square with pepperoni`,
         rating: `9.2`,
         imgURL: `https://roadfood.com/wp-content/uploads/2017/08/20161231_145159-1024x685.jpg`
 
     },
     {
-        name: `NY Pizza Suprema`,
-        address: `413 8th Ave, New York, NY 10001`,
-        speciality: `plain slice pie or upside down pie`,
+        name: `Name: <br> NY Pizza Suprema`,
+        address: `Address: <br> 413 8th Ave, New York, NY 10001`,
+        speciality: `Speciality: <br> plain slice pie`,
         rating: `8.9`,
         imgURL: `https://external-preview.redd.it/e7YCrCGvBWj43qfM09BlFAi7ez4j1GkFp3R81sFpyYY.jpg?auto=webp&s=4be3cb41610ac44fab7a49b1160bcad29d77d9f2`
     },
     {
-        name: `Lee's Tavern`,
-        address: `60 Hancock St, Staten Island, NY 10305`,
-        speciality: `bar pie`,
+        name: `Name: <br> Lee's Tavern`,
+        address: `Address: <br> 60 Hancock St, Staten Island, NY 10305`,
+        speciality: `Speciality: <br> bar pie`,
         rating: `8.8`,
         imgURL: `https://leestavernnyc.com/wp-content/uploads/2019/06/IMG_9477.jpg`
     },
     {
-        name: `Joe's Pizza`,
-        address: `7 Carmine St New York, NY 10014`,
-        speciality: `plain slice pie`,
+        name: `Name: <br> Joe's Pizza`,
+        address: `Address: <br> 7 Carmine St New York, NY 10014`,
+        speciality: `Speciality: <br> plain slice pie`,
         rating: `8.6`,
         imgURL: `https://cdn2.pizzadb.com/wp-content/uploads/2018/03/joes4-1012x1024.png`
     }

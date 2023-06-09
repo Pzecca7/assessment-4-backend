@@ -20,8 +20,8 @@ app.get("/api/compliment", getCompliment);
 app.get("/api/fortune", getFortune);
 app.get("/pizzerias", getAllPizzerias)
 app.post("/pizzerias", addPizzeria)
-app.delete("/pzzerias/index", removePizzeria)
-app.put("/pizzerias/index", updateRating)
+app.delete("/pzzerias/id", removePizzeria)
+app.put("/pizzerias/id", updateRating)
 
 
 
