@@ -38,6 +38,8 @@ const pizzerias = [
     }
 ]
 
+
+
 module.exports = {
 
     getCompliment: (req, res) => {
@@ -83,6 +85,6 @@ module.exports = {
             res.status(400).send('bad request!')
             return
         }
-
+        res.status(200).send(pizzerias)
     }
 }
