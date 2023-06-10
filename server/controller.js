@@ -45,13 +45,14 @@ module.exports = {
         console.log(req.body)
         console.log(req.params)
         if(type === 'minus' && pizzeriaDB[index].rating > 0){
-            pizzeriaDB[index].rating -= .10
+            pizzeriaDB[index].rating -= .1
         } else if(type === 'plus' && pizzeriaDB[index].rating < 10){
-            pizzeriaDB[index].rating += .10
+           pizzeriaDB[index].rating += .1
         } else {
             res.status(400).send('bad request!')
             return
         }
         res.status(200).send(pizzeriaDB)
-    }
+    },
+   
 }

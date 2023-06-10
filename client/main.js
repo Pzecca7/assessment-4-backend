@@ -61,9 +61,37 @@ const updateRating = (id, type) => {
     .catch(err => console.log(err))
 }
 
+
+const createPizzeriaTab = (pizzeria) => {
+    const pizzeriaTab = document.createElement(`div`)
+    pizzeriaTab.classList.add(`pizzeria-tab`)
+
+    pizzeriaTab.innerHTML = `<img alt='pizza image' src=${pizzeria.imgURL} class="pizza-img"/>
+        <p class="name" onclick="changeToOrange">${pizzeria.name}</p>
+        <p class="address">${pizzeria.address}</p>
+        <p class="speciality">${pizzeria.speciality}</p>
+        <div class="btns-container">
+            <button class="rating-btn" onclick="updateRating(${pizzeria.id}, 'plus')">+</button>
+            <p class="pizza-rating">${pizzeria.rating}</p>
+            <button class="rating-btn" onclick="updateRating(${pizzeria.id}, 'minus')">-</button>
+        </div>
+        <button onclick="removePizzeria(${pizzeria.id})" id="remove-btn">Remove</button>
+        `
+
+
+    pizzeriasContainer.appendChild(pizzeriaTab)
+}
+
+const displayPizzerias = pizzerias => {
+    pizzeriasContainer.innerHTML= ``
+    for (let i = 0; i < pizzerias.length; i++) {
+        createPizzeriaTab(pizzerias[i])
+    }
+}
+
 function submitNewPizzeria(event) {
     event.preventDefault()
-
+    
     let name = document.querySelector(`#input-name`)
     let address = document.querySelector(`#input-address`)
     let speciality = document.querySelector(`#input-speciality`)
@@ -87,34 +115,6 @@ function submitNewPizzeria(event) {
     rating.value = ''
     imgURL.value = ''
 
-}
-
-
-const createPizzeriaTab = (pizzeria) => {
-    const pizzeriaTab = document.createElement(`div`)
-    pizzeriaTab.classList.add(`pizzeria-tab`)
-
-    pizzeriaTab.innerHTML = `<img alt='pizza image' src=${pizzeria.imgURL} class="pizza-img"/>
-        <p class="name">${pizzeria.name}</p>
-        <p class="address">${pizzeria.address}</p>
-        <p class="speciality">${pizzeria.speciality}</p>
-        <div class="btns-container">
-            <button class="rating-btn" onclick="updateRating(${pizzeria.id}, 'plus')">+</button>
-            <p class="pizza-rating">${pizzeria.rating}</p>
-            <button class="rating-btn" onclick="updateRating(${pizzeria.id}, 'minus')">-</button>
-        </div>
-        <button onclick="removePizzeria(${pizzeria.id})" id="remove-btn">Remove</button>
-        `
-
-
-    pizzeriasContainer.appendChild(pizzeriaTab)
-}
-
-const displayPizzerias = pizzerias => {
-    pizzeriasContainer.innerHTML= ``
-    for (let i = 0; i < pizzerias.length; i++) {
-        createPizzeriaTab(pizzerias[i])
-    }
 }
 
 form.addEventListener('submit', submitNewPizzeria)

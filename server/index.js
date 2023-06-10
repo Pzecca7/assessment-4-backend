@@ -12,7 +12,7 @@ const { getCompliment,
         getAllPizzerias,
         addPizzeria,
         removePizzeria,
-        updateRating
+        updateRating,
 } = require('./controller')
 
 
