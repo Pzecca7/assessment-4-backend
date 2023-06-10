@@ -30,6 +30,8 @@ module.exports = {
         pizzeriaDB.push(req.body)
         res.status(200).send(pizzeriaDB)
         pizzeriaID++
+        console.log(req.body.id)
+        console.log(req.body)
     },
     removePizzeria: (req,res) => {
         console.log(req.params)

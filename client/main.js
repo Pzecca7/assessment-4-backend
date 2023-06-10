@@ -66,6 +66,11 @@ const createPizzeriaTab = (pizzeria) => {
     const pizzeriaTab = document.createElement(`div`)
     pizzeriaTab.classList.add(`pizzeria-tab`)
 
+    console.log(pizzeria)
+    console.log(pizzeria.name)
+    console.log(pizzeria.address)
+    console.log(pizzeria.rating)
+
     pizzeriaTab.innerHTML = `<img alt='pizza image' src=${pizzeria.imgURL} class="pizza-img"/>
         <p class="name" onclick="changeToOrange">${pizzeria.name}</p>
         <p class="address">${pizzeria.address}</p>
@@ -78,15 +83,19 @@ const createPizzeriaTab = (pizzeria) => {
         <button onclick="removePizzeria(${pizzeria.id})" id="remove-btn">Remove</button>
         `
 
-
     pizzeriasContainer.appendChild(pizzeriaTab)
 }
 
 const displayPizzerias = pizzerias => {
     pizzeriasContainer.innerHTML= ``
     for (let i = 0; i < pizzerias.length; i++) {
+        console.log(pizzerias[i])
         createPizzeriaTab(pizzerias[i])
     }
+    console.log(pizzerias)
+    console.log(pizzeriasContainer)
+    console.log(pizzerias.length)
+   
 }
 
 function submitNewPizzeria(event) {
@@ -115,6 +124,7 @@ function submitNewPizzeria(event) {
     rating.value = ''
     imgURL.value = ''
 
+    console.log(bodyObj)
 }
 
 form.addEventListener('submit', submitNewPizzeria)
