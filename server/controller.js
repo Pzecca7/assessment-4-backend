@@ -66,15 +66,13 @@ module.exports = {
     },
     removePizzeria: (req,res) => {
         console.log(req.params)
-        let { id } = req.params
-        let index = pizzerias.findIndex(pizzerias => pizzerias.id === +id)
+        let { index } = req.params
         pizzerias.splice(+index, 1)
         res.status(200).send(pizzerias)
      },
     updateRating: (req,res) => {
-        let { id } = req.params
+        let { index } = req.params
         let { type } = req.body
-        let index = pizzerias.findIndex(pizzerias => pizzerias.id === +id)
         console.log(req.body)
         console.log(req.params)
         if(type === 'minus' && pizzerias[index].rating > 0){
