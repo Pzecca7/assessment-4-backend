@@ -41,7 +41,7 @@ module.exports = {
     updateRating: (req,res) => {
         let { id } = req.params
         let { type } = req.body
-        let index = pizzeriaDB.findIndex(pizzeria => pizzeria.id === id++)
+        let index = pizzeriaDB.findIndex(pizzeria => pizzeria.id === +id)
         console.log(req.body)
         console.log(req.params)
         if(type === 'minus' && pizzeriaDB[index].rating > 0){
