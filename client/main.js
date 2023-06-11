@@ -91,17 +91,17 @@ const createPizzeriaTab = (pizzeria) => {
         </div>
         <div class="btns-container">
         <button id="remove-btn" onclick="removePizzeria(${pizzeria.id})">Remove</button>
-        <button id="visited-btn" onclick="changeColor(${pizzeria.name})">Visited</button>
+        <button id="visited-btn" onclick="changeColor(${pizzeria.name}/${pizzeria.address}/${pizzeria.speciality}/${pizzeria.rating})">Visited</button>
         `
     pizzeriasContainer.appendChild(pizzeriaTab)
 }
 
-const displayPizzerias = pizzerias => {
-    let { visited , name, address, speciality, rating } = pizzerias
+const displayPizzerias = pizzeriasObj => {
+    let { visited , name, address, speciality, rating } = pizzeriasObj
     pizzeriasContainer.innerHTML= ``
-    for (let i = 0; i < pizzerias.length; i++) {
-        console.log(pizzerias[i])
-        createPizzeriaTab(pizzerias[i])
+    for (let i = 0; i < pizzeriasObj.length; i++) {
+        console.log(pizzeriasObj[i])
+        createPizzeriaTab(pizzeriasObj[i])
     }
 
     if(visited){
@@ -109,9 +109,9 @@ const displayPizzerias = pizzerias => {
     }
 
 
-    console.log(pizzerias)
+    console.log(pizzeriasObj)
     console.log(pizzeriasContainer)
-    console.log(pizzerias.length)
+    console.log(pizzeriasObj.length)
    
 }
 
