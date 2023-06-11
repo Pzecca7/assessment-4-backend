@@ -104,6 +104,9 @@ button:hover {
     font-size: 20px;
 }
 
+.name:hover {
+    cursor: pointer;
+}
 .address{
     color: #006BB6;
     line-height: 1.4;
@@ -125,9 +128,6 @@ button:hover {
     font-weight: 600;
     font-size: 50px;
 }
-
-
-
 
 
 .rating-btn{
@@ -153,4 +153,8 @@ button:hover {
 	color: white;
 	border-radius: 10px;
 	border-color: white
+}
+
+.color-change {
+    color: #F58426;
 }

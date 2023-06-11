@@ -46,6 +46,7 @@ module.exports = {
         let index = pizzeriaDB.findIndex(pizzeria => pizzeria.id === +id)
         console.log(req.body)
         console.log(req.params)
+        console.log(pizzeriaDB[index].visited)
         if(type === 'minus' && pizzeriaDB[index].rating > 0){
             pizzeriaDB[index].rating -= .1
         } else if(type === 'plus' && pizzeriaDB[index].rating < 10){
@@ -56,5 +57,16 @@ module.exports = {
         }
         res.status(200).send(pizzeriaDB)
     },
-   
+   changeColor: (req,res) => {
+    let { id } = req.params
+    id = parseInt(id)
+    let index = pizzeriaDB.findIndex(pizzeria => pizzeria.id === +id)
+
+    pizzeriaDB[index].visited = !pizzeriaDB[index].visited
+
+    res.status(200).send(pizzeriaDB)
+
+    console.log(pizzeriaDB[index].visited)
+
+   }
 }

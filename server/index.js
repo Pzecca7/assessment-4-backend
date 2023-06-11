@@ -13,6 +13,7 @@ const { getCompliment,
         addPizzeria,
         removePizzeria,
         updateRating,
+        changeColor
 } = require('./controller')
 
 
@@ -22,6 +23,7 @@ app.get("/pizzerias", getAllPizzerias)
 app.post("/pizzerias", addPizzeria)
 app.delete("/pizzerias/:id", removePizzeria)
 app.put("/pizzerias/:id", updateRating)
+app.put("/pizzerias/:id", changeColor)
 
 
 

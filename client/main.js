@@ -61,6 +61,14 @@ const updateRating = (id, type) => {
     .catch(err => console.log(err))
 }
 
+const changeColor = (id) => {
+    axios.put(`${baseURL}/${id}`)
+    .then(response => {
+        displayPizzerias(response.data)
+    })
+    .catch(err => console.log(err))
+}
+
 
 const createPizzeriaTab = (pizzeria) => {
     const pizzeriaTab = document.createElement(`div`)
@@ -70,9 +78,10 @@ const createPizzeriaTab = (pizzeria) => {
     console.log(pizzeria.name)
     console.log(pizzeria.address)
     console.log(pizzeria.rating)
+    console.log(pizzeria.visited)
 
     pizzeriaTab.innerHTML = `<img alt='pizza image' src=${pizzeria.imgURL} class="pizza-img"/>
-        <p class="name" onclick="changeToOrange">${pizzeria.name}</p>
+        <p class="name" onclick="changeColor">${pizzeria.name}</p>
         <p class="address">${pizzeria.address}</p>
         <p class="speciality">${pizzeria.speciality}</p>
         <div class="btns-container">
@@ -82,16 +91,22 @@ const createPizzeriaTab = (pizzeria) => {
         </div>
         <button onclick="removePizzeria(${pizzeria.id})" id="remove-btn">Remove</button>
         `
-
     pizzeriasContainer.appendChild(pizzeriaTab)
 }
 
 const displayPizzerias = pizzerias => {
+    let { visited , name } = pizzerias
     pizzeriasContainer.innerHTML= ``
     for (let i = 0; i < pizzerias.length; i++) {
         console.log(pizzerias[i])
         createPizzeriaTab(pizzerias[i])
     }
+
+    if(visited){
+        name = `color-change`
+    }
+
+
     console.log(pizzerias)
     console.log(pizzeriasContainer)
     console.log(pizzerias.length)
@@ -111,7 +126,7 @@ function submitNewPizzeria(event) {
         name: name.value,
         address: address.value,
         speciality: speciality.value,
-        rating: +(rating.value),
+        rating: +(rating.value).toFixed(1),
         imgURL: imgURL.value
     }
 
