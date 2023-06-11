@@ -81,7 +81,7 @@ button:hover {
 
 .pizzeria-tab {
     height: 200px;
-    width: 1500px;
+    width: 1550px;
     background-color: #ddd;
     border: 2px solid #006BB6;
     border-radius: 17px;
@@ -137,6 +137,15 @@ button:hover {
 }
 
 
+.rating-container {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-right: 50px;
+}
+
 .btns-container {
     height: 200px;
     display: flex;
@@ -148,6 +157,15 @@ button:hover {
 
 #remove-btn {
     background-color: #006BB6;
+    margin-right: 10px;
+    padding: 10px 10px;
+	color: white;
+	border-radius: 10px;
+	border-color: white
+}
+
+#visited-btn {
+    background-color: #F58426;
     margin-right: 10px;
     padding: 10px 10px;
 	color: white;

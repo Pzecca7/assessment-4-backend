@@ -81,21 +81,23 @@ const createPizzeriaTab = (pizzeria) => {
     console.log(pizzeria.visited)
 
     pizzeriaTab.innerHTML = `<img alt='pizza image' src=${pizzeria.imgURL} class="pizza-img"/>
-        <p class="name" onclick="changeColor">${pizzeria.name}</p>
+        <p class="name">${pizzeria.name}</p>
         <p class="address">${pizzeria.address}</p>
         <p class="speciality">${pizzeria.speciality}</p>
-        <div class="btns-container">
+        <div class="rating-container">
             <button class="rating-btn" onclick="updateRating(${pizzeria.id}, 'plus')">+</button>
             <p class="pizza-rating">${pizzeria.rating}</p>
             <button class="rating-btn" onclick="updateRating(${pizzeria.id}, 'minus')">-</button>
         </div>
-        <button onclick="removePizzeria(${pizzeria.id})" id="remove-btn">Remove</button>
+        <div class="btns-container">
+        <button id="remove-btn" onclick="removePizzeria(${pizzeria.id})">Remove</button>
+        <button id="visited-btn" onclick="changeColor(${pizzeria.name})">Visited</button>
         `
     pizzeriasContainer.appendChild(pizzeriaTab)
 }
 
 const displayPizzerias = pizzerias => {
-    let { visited , name } = pizzerias
+    let { visited , name, address, speciality, rating } = pizzerias
     pizzeriasContainer.innerHTML= ``
     for (let i = 0; i < pizzerias.length; i++) {
         console.log(pizzerias[i])
@@ -103,7 +105,7 @@ const displayPizzerias = pizzerias => {
     }
 
     if(visited){
-        name = `color-change`
+        name, address, speciality, rating = `color-change`
     }
 
 
