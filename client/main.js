@@ -128,7 +128,7 @@ function submitNewPizzeria(event) {
         name: name.value,
         address: address.value,
         speciality: speciality.value,
-        rating: +(rating.value).toFixed(1),
+        rating: +(rating.value),
         imgURL: imgURL.value
     }
 
